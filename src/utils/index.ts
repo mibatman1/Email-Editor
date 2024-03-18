@@ -47,7 +47,8 @@ export const handleDrop=(event:React.DragEvent<HTMLDivElement>)=>
     if(!draggable.classList.contains('destination'))
     {
         const cloned=draggable.cloneNode(true) as HTMLElement;
-        cloned.setAttribute('id',new Date().getTime() as unknown as string)
+        const id=new Date().getTime();
+        cloned.setAttribute('id',id as unknown as string)
         cloned.classList.add('destination');
         cloned.addEventListener('dragstart',()=>
         {
@@ -57,6 +58,10 @@ export const handleDrop=(event:React.DragEvent<HTMLDivElement>)=>
         {
             cloned.classList.remove('dragging')
         });
+        cloned.addEventListener('click',()=>
+        {
+            console.log(id)
+        })
         if(afterElement===null) 
         {
             container.appendChild(cloned);

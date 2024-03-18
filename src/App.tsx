@@ -4,15 +4,18 @@
 // } from "@mui/material/styles";
 import Navbar from "./Components/Navbar/Navbar";
 import Editor from "./Editor/container";
+import { ElementContextProvider } from "./context/ElementContext";
 // import Routes from "./Routes";
 // import theme from "./theme";
 
 function App() {
   return (
-    <div>
-      <Navbar/>
-      <Editor/>
-    </div>
+    <ElementContextProvider>
+      <div>
+        <Navbar/>
+        <Editor/>
+      </div>
+    </ElementContextProvider>
   );
 }
 

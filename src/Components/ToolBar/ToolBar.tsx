@@ -1,7 +1,4 @@
-import { Box } from "@mui/material";
-import { handleDragEnd, handleDragStart } from "../../utils";
 import SideBar from "../SideBar/SideBar";
-import { StyledButton, StyledPaper } from "./toolBar.style";
 import ElementEditor from "../ElementEditor";
 import { useState } from "react";
 import ElementGroup from "../ElementGroup";
@@ -41,10 +38,3 @@ const ToolBar=()=>
 }
 
 export default ToolBar;
-
-
-{/* <div style={{marginTop:13, marginRight:50}}>
-            {/* <ElementEditor/> */}
-        //     <SideBar setSelectedComponent={setSelectedComponent}/>
-        //     {selectedComponent && renderComponent(selectedComponent)}
-        // </div> */}

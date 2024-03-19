@@ -1,0 +1,27 @@
+export interface CSSProperties
+{
+    color:string
+    backgroundColor:string
+    padding:string
+    paddingTop:string|null
+    paddingBottom:string|null
+    paddingRight:string|null
+    paddingLeft:string|null
+    border:string
+    borderTop:string|null
+    borderRight:string|null
+    borderLeft:string|null
+    borderBottom:string|null
+    lineHeight:string
+    borderTopLeftRadius:string|null
+    borderTopRightRadius:string|null
+    borderBottomRightRadius:string|null
+    borderBottomLeftRadius:string|null
+    width:string
+    fontFamily:string
+    fontWeight:string
+    fontSize:string
+    text:string
+    href:string
+    target:string
+}

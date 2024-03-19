@@ -18,6 +18,8 @@ import { useElementContext } from '../../context/ElementContext';
 import { useState } from 'react';
 import { style } from './type';
 import { handleApplyCSS } from './utils/handleApplyCSS';
+import Spacing from './components';
+import Border from './components/Border';
 
 const ElementEditor=()=>
 {
@@ -39,7 +41,7 @@ const ElementEditor=()=>
   };
 
   return (
-    <div>
+    <div style={{overflow:'auto'}}>
       <Box sx={{marginTop: 2, display: 'flex', alignItems: 'flex-end', justifyContent:'end', marginBottom:2}}>
         <ButtonGroup variant="contained" aria-label="Basic button group" >
           <Button>Delete</Button>
@@ -144,7 +146,22 @@ const ElementEditor=()=>
           <b>SPACING</b>
         </AccordionSummary>
         <AccordionDetails>
-          <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
+          <Spacing style={style} setStyle={setStyle}/>
+          <Border/>
+        </AccordionDetails>
+      </Accordion>
+      <Button sx={{marginTop: 3}} variant="contained" onClick={()=>handleApplyCSS(id,style)}>Apply</Button>
+    </div>
+  );
+}
+
+export default ElementEditor;
+
+
+
+
+
+{/* <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
             <PaddingIcon sx={{ color: 'action.active', mr: 1, my: 0.5 }} />
             <TextField id="input-with-sx" label="Padding" variant="standard" 
               value={style.padding || ''}
@@ -157,12 +174,4 @@ const ElementEditor=()=>
               onChange={(e)=>setStyle({...style, border:e.target.value})}
               fullWidth
             />
-          </Box>
-        </AccordionDetails>
-      </Accordion>
-      <Button sx={{marginTop: 3}} variant="contained" onClick={()=>handleApplyCSS(id,style)}>Apply</Button>
-    </div>
-  );
-}
-
-export default ElementEditor;
+          </Box> */}
